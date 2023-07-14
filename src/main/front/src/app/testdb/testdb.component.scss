@@ -1,0 +1,96 @@
+.families {
+    width: 256px; /* Ajusta el valor según tus necesidades */
+    margin: 1em;
+    border: 4px solid #FFD477;
+    border-radius: 50%;
+  }
+
+.familiesImg {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    background-color: #F19628;
+}
+
+h3 {
+    color: white;
+    text-decoration: underline;
+}
+
+td {
+    border: 1px solid rgb(109, 109, 109);
+    text-align: center;
+    padding: 1em;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+th {
+    background-color: #477D47;
+    border: 1px solid rgb(109, 109, 109);
+    text-align: center;
+    padding: 1em;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+}
+
+.tiny {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+}
+
+.zebra tr:nth-child(even) {
+    background-color: white;
+}
+
+.zebra tr:nth-child(odd) {
+    background-color: rgb(180, 180, 180);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    grid-column-gap: 10px;
+  }
+
+.card-text1 {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+
+}
+
+.card-text2 {
+    font-size: 18px;
+    text-align: center;
+    color: #477D47;
+
+}
+
+.card-text3 {
+    font-size: 18px;
+    text-align: center;
+
+}
+
+.card-body {
+    background-color: #F19628;
+    border-top: 8px solid #FFD477;
+    
+}
+
+.card {
+    border: 8px solid #FFD477;
+}
