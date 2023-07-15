@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './user/views/login/login.component';
-import { AccessformComponent } from './user/components/accessform/accessform.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { TestDBComponent } from './testdb/testdb.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ListComponent } from './list/list.component';
+import { CreateformComponent } from './createform/createform.component';
+import { EditformComponent } from './editform/editform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoginComponent,
-    AccessformComponent,
-    TestDBComponent
+    FooterComponent,
+    ListComponent,
+    CreateformComponent,
+    EditformComponent
   ],
   imports: [
     BrowserModule,
@@ -26,4 +27,3 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
