@@ -1,6 +1,12 @@
 package org.factoriaf5.zootopia.models.continents;
-
+import java.util.ArrayList;
+import java.util.List;
 import jakarta.persistence.*;
+import org.factoriaf5.zootopia.models.animals.Animals;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Entity
 @Table(name = "continents")
@@ -13,6 +19,9 @@ public class Continents {
     private String name;
     private String imgUrl;
 
+    @OneToMany(mappedBy = "continent")
+    @JsonBackReference
+    private List<Animals> animals = new ArrayList<>();
     public Continents() {
     }
 
@@ -44,5 +53,13 @@ public class Continents {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public List<Animals> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(List<Animals> animals) {
+        this.animals = animals;
     }
 }

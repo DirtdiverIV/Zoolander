@@ -1,4 +1,11 @@
 package org.factoriaf5.zootopia.models.families;
+import java.util.ArrayList;
+import java.util.List;
+import org.factoriaf5.zootopia.models.animals.Animals;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 import jakarta.persistence.*;
@@ -12,6 +19,10 @@ public class Families {
 
     private String name;
     private String imgUrl;
+
+    @OneToMany(mappedBy = "family")
+    @JsonBackReference
+    private List<Animals> animals = new ArrayList<>();
 
     public Families() {
     }
@@ -44,5 +55,13 @@ public class Families {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public List<Animals> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(List<Animals> animals) {
+        this.animals = animals;
     }
 }

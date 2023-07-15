@@ -2,6 +2,10 @@ package org.factoriaf5.zootopia.models.animals;
 import org.factoriaf5.zootopia.models.families.Families;
 import org.factoriaf5.zootopia.models.continents.Continents;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -22,9 +26,11 @@ public class Animals {
 
     @ManyToOne
     @JoinColumn(name = "families_id")
+    @JsonManagedReference
     private Families family;
 
     @ManyToOne
+    @JsonManagedReference
     @JoinColumn(name = "continents_id")
     private Continents continent;
 
@@ -97,6 +103,8 @@ public class Animals {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
+
+
 }
 
 
