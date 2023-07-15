@@ -26,11 +26,9 @@ public class Animals {
 
     @ManyToOne
     @JoinColumn(name = "families_id")
-    @JsonManagedReference
     private Families family;
 
     @ManyToOne
-    @JsonManagedReference
     @JoinColumn(name = "continents_id")
     private Continents continent;
 
