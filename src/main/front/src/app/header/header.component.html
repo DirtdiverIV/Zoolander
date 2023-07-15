@@ -1,18 +1,16 @@
-<header>
-  <img src="" alt="Logo">
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Dropdown button
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-  </div>
-    <button class="btn btn-primary-list" type="button">Lista</button>
-    <button class="btn btn-primary-create" type="button">Crear</button>
-    <button class="btn btn-primary-edit" type="button">Editar</button>
-  </div>
-</header>
+
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu" >
+          <li *ngFor="let item of familiesData"><a class="dropdown-item" href="#"><img class="circle" src="../assets{{ item.imgUrl}}">{{ item.name }}</a></li>
+          </ul>
+      </div>
+      <div class="tittle">
+        <h1>Dashboard</h1>
+      </div>
+    </div>
+  </nav>

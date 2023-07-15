@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ListComponent } from './list/list.component';
 import { CreateformComponent } from './createform/createform.component';
 import { EditformComponent } from './editform/editform.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditformComponent } from './editform/editform.component';
     FooterComponent,
     ListComponent,
     CreateformComponent,
-    EditformComponent
+    EditformComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
