@@ -16,14 +16,9 @@
 </div>
 
 <div class="dashMain container-fluid">
-    <div class="dash1 container-fluid">
-        <img class="img-fluid" src="../assets/families1.png">
-        <img class="img-fluid" src="../assets/families2.png">
-        <img class="img-fluid" src="../assets/families3.png">
-    </div>
-        
-    <div class="dash2 containe-fluid">
-        <img class="img-fluid" src="../assets/families4.png">
-        <img class="img-fluid" src="../assets/families5.png">
-    </div>
+  <div class="dash1 container-fluid">
+    <a *ngFor="let family of familiesData" [routerLink]="['/list', family.id]">
+      <img class="img-fluid" [src]="family.imgUrl">
+    </a>
+  </div>
 </div>

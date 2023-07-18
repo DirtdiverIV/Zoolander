@@ -1,0 +1,45 @@
+<h2>Tabla de Animals</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Género</th>
+          <th>Familia ID</th>
+          <th>Continente ID</th>
+          <th>Fecha</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let animal of animals">
+          <td>{{ animal.id }}</td>
+          <td>{{ animal.name }}</td>
+          <td>{{ animal.type }}</td>
+          <td>{{ animal.gender }}</td>
+          <td>{{ animal.family.id }}</td>
+          <td>{{ animal.continent.id }}</td>
+          <td>{{ animal.date | date: 'dd/MM/yyyy' }}</td>
+          <td><img [src]="'http://localhost:8000' + animal.imgUrl" alt="Imagen"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Tabla de Families</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let family of families">
+          <td>{{ family.id }}</td>
+          <td>{{ family.name }}</td>
+          <td><img [src]="'http://localhost:8000' + family.imgUrl" alt="Imagen"></td>
+        </tr>
+      </tbody>
+    </table>

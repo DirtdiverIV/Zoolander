@@ -1,0 +1,6 @@
+<select [(ngModel)]="selectedFamilyId" (change)="selectFamily(selectedFamilyId)">
+    <option [ngValue]="null">Seleccione una familia</option>
+    <option value="1">Family 1</option>
+    <option value="2">Family 2</option>
+    <!-- Agrega más opciones según tus necesidades -->
+  </select>

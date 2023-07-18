@@ -1,22 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { AnimalsService } from '../animals.service';
+import { FamilyService } from '../family.service';
+import { DatePipe } from '@angular/common';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+  providers: [DatePipe]
 })
 export class ListComponent implements OnInit {
-  apiData: any[] = []; // Creamos un array vacio para que lo rellene como un bollicao
+  apiData: any[] = [];
   tableColumns: string[] = ['id', 'name', 'type', 'gender', 'families_id', 'continents_id', 'date', 'img_url'];
+  selectedFamilyId: number | null = null;
+  filteredData: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private animalsService: AnimalsService,
+    private familyService: FamilyService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    // LLamamos a la api
-    this.http.get<any[]>('http://localhost:8000/animals')
-      .subscribe(data => {
-        this.apiData = data;
+    this.route.paramMap.subscribe(params => {
+      const familyId = Number(params.get('familyId'));
+      this.familyService.setSelectedFamilyId(familyId);
+      this.selectedFamilyId = familyId;
+      this.loadAnimals();
+    });
+
+    // Llamamos a la API
+    this.animalsService.getAnimals().subscribe(data => {
+      this.apiData = data;
+    });
+  }
+
+  loadAnimals() {
+    if (this.selectedFamilyId !== null) {
+      this.animalsService.getAnimalsByFamily(this.selectedFamilyId).pipe(
+        map(data => data.filter(item => item.family && item.family.id === this.selectedFamilyId))
+      ).subscribe(data => {
+        this.filteredData = data;
       });
+    }
   }
 }
