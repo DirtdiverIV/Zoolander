@@ -10,12 +10,14 @@ import { CreateformComponent } from './createform/createform.component';
 import { EditformComponent } from './editform/editform.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FamilySelectorComponent } from './family-selection/family-selection.component'; // Actualicé el nombre del componente
+import { FamilySelectorComponent } from './family-selection/family-selection.component';
+import { AnimalsService } from './animals.service';
 
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
 import { ContinentsComponent } from './continents/continents.component';
+import { ContinentsService } from './continents.service';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -43,7 +45,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, ContinentsService, AnimalsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

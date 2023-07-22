@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import Axios from 'axios'; // Importa 'Axios' en lugar de 'axios'
-import { ContinentService } from '../continents.service';
+import Axios from 'axios';
+import { ContinentsService } from '../continents.service'; // Cambiar ContinentService a ContinentsService
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,11 +11,14 @@ import { ContinentService } from '../continents.service';
 })
 export class DashboardComponent implements OnInit {
   animalCount: number = 0;
-  families: any[] = [];
   familiesData: any[] = [];
   continentsData: any[] = [];
 
-  constructor(private http: HttpClient, private continentService: ContinentService) {}
+  constructor(
+    private http: HttpClient,
+    private continentsService: ContinentsService, // Cambiar ContinentService a ContinentsService
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.showAnimalCount();
@@ -24,7 +28,7 @@ export class DashboardComponent implements OnInit {
 
   async showAnimalCount() {
     try {
-      const responseAnimals = await Axios.get('http://localhost:8000/animals'); // Utiliza 'Axios' en lugar de 'axios'
+      const responseAnimals = await Axios.get('http://localhost:8000/animals');
       this.animalCount = responseAnimals?.data?.length ?? 0;
     } catch (error) {
       console.error('Error fetching animal count:', error);
@@ -34,21 +38,27 @@ export class DashboardComponent implements OnInit {
   getFamiliesData(): void {
     this.http.get<any[]>('http://localhost:8000/families')
       .subscribe(data => {
-        this.families = data;
         this.familiesData = data.map(family => ({
           ...family,
           imgUrl: `../assets${family.imgUrl}`
         }));
       });
   }
+
   getContinentsData(): void {
-    this.continentService.getAllContinents().subscribe(
-      (continents: any[]) => {
-        this.continentsData = continents; // Almacenamos los datos de los continentes en la variable continentsData
-      },
-      (error) => {
-        console.error('Error fetching continents data:', error);
-      }
-    );
+    this.http.get<any[]>('http://localhost:8000/continents')
+      .subscribe(
+        (continents: any[]) => {
+          this.continentsData = continents;
+          console.log('Continents data:', this.continentsData);
+        },
+        (error) => {
+          console.error('Error fetching continents data:', error);
+        }
+      );
+  }
+
+  selectContinent(continentId: number) {
+    this.continentsService.setSelectedContinentId(continentId);
   }
 }

@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import { ContinentsService } from './continents.service';
+@Injectable({
+  providedIn: 'root'
+})
+export class ContinentService {
+  private apiUrl = 'http://localhost:8000';
 
-describe('ContinentsService', () => {
-  let service: ContinentsService;
+  constructor(private http: HttpClient) { }
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ContinentsService);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+  getAllContinents(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/continents`);
+  }
+}

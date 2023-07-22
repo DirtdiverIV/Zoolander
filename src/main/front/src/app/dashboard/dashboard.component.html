@@ -1,11 +1,11 @@
 <div class="btnDiv container">
   <div class="dropdown">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Continentes
+      Continents
     </a>
     <ul class="dropdown-menu">
-      <li *ngFor="let continent of continentsData">
-        <a class="dropdown-item" href="#">{{ continent.name }} <img [src]="'../assets' + continent.imgUrl" alt="Imagen del continente" width="100" height="100"></a>
+      <li *ngFor="let continent of continentsData" [routerLink]="['/continents', continent.id]">
+        <a class="dropdown-item">{{ continent.name }}</a>
       </li>
     </ul>
   </div>

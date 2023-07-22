@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContinentService {
-  private apiUrl = 'http://localhost:8000'; // Ajusta la URL de la API según tu configuración
+export class ContinentsService {
+  private selectedContinentIdSource = new Subject<number | null>();
+  selectedContinentId$ = this.selectedContinentIdSource.asObservable();
 
-  constructor(private http: HttpClient) { }
-
-  // Esta función obtiene todos los continentes desde el servidor
-  getAllContinents(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/continents`);
+  setSelectedContinentId(continentId: number | null) {
+    this.selectedContinentIdSource.next(continentId);
   }
 }

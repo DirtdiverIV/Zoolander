@@ -1,1 +1,29 @@
-<p>continents works!</p>
+<table class="table" id="zebra">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Género</th>
+      <th>Familia</th>
+      <th>Origen</th>
+      <th>Ingreso</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of filteredData">
+      <tr *ngIf="item.continent && item.continent.id === selectedContinentId">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.gender }}</td>
+        <td>{{ item.family.name }}</td>
+        <td>{{ item.continent.name }}</td>
+        <td>{{ item.date | date: 'dd/MM/yyyy' }}</td>
+        <td><img [src]="'../assets' + item.imgUrl"></td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
