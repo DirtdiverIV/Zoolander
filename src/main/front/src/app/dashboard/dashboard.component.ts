@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Axios from 'axios';
 import { ContinentsService } from '../continents.service'; // Cambiar ContinentService a ContinentsService
@@ -14,6 +14,17 @@ export class DashboardComponent implements OnInit {
   familiesData: any[] = [];
   continentsData: any[] = [];
 
+  soundUrls: string[] = [
+    '../assets/sounds/felids.mp3', 
+    '../assets/sounds/canids.mp3', 
+    '../assets/sounds/reptile.mp3', 
+    '../assets/sounds/mapache.mp3', 
+    '../assets/sounds/conejos.mp3'  
+  ];
+
+  
+
+
   constructor(
     private http: HttpClient,
     private continentsService: ContinentsService, // Cambiar ContinentService a ContinentsService
@@ -24,6 +35,18 @@ export class DashboardComponent implements OnInit {
     this.showAnimalCount();
     this.getFamiliesData();
     this.getContinentsData();
+  }
+  
+  @ViewChild('audioPlayer') audioPlayer!: ElementRef<HTMLAudioElement>;
+
+  playSound(familyId: number) {
+    if (familyId >= 1 && familyId <= this.soundUrls.length) {
+      const soundIndex = familyId - 1;
+      const soundUrl = this.soundUrls[soundIndex];
+      this.audioPlayer.nativeElement.src = soundUrl;
+      this.audioPlayer.nativeElement.load();
+      this.audioPlayer.nativeElement.play();
+    }
   }
 
   async showAnimalCount() {

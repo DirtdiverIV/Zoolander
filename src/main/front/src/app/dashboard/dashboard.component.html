@@ -1,23 +1,40 @@
 <div class="btnDiv container">
   <div class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a id="contbtn" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       Continents
     </a>
     <ul class="dropdown-menu">
       <li *ngFor="let continent of continentsData" [routerLink]="['/continents', continent.id]">
-        <a class="dropdown-item">{{ continent.name }}</a>
+        <div class="container" id="dropDiv"> <a class="dropdown-item"><img id="drop" class="img-fluid" [src]="'../assets' + continent.imgUrl"></a><p id="lip" >{{ continent.name }}</p></div>
       </li>
     </ul>
   </div>
       <div>
-      <button type="button" class="btn btn-primary">Ejemplares: <button id="counter" type="button" class="btn btn-primary">{{ animalCount }}</button></button>
+      <button id="contbtn" type="button" class="btn btn-primary">Ejemplares: <button id="counter" type="button" class="btn btn-primary">{{ animalCount }}</button></button>
     </div>
 </div>
 
-<div class="dashMain container-fluid">
-  <div class="dash1 container-fluid">
-    <a *ngFor="let family of familiesData" [routerLink]="['/list', family.id]">
-      <img class="img-fluid" [src]="family.imgUrl">
-    </a>
+<div class="dashMain container-fluid" id="maingrid">
+  <div class="dash1 container-fluid row">
+    <ng-container *ngFor="let family of familiesData.slice(0, 3)">
+      <div class="col">
+        <a [routerLink]="['/list', family.id]" (mouseenter)="playSound(family.id)">
+          <img class="img-fluid" [src]="family.imgUrl">
+        </a>
+      </div>
+    </ng-container>
   </div>
-</div>
+
+  <div class="dash2 container-fluid row">
+    <ng-container *ngFor="let family of familiesData.slice(3, 5)">
+      <div class="col">
+        <a [routerLink]="['/list', family.id]" (mouseenter)="playSound(family.id)">
+          <img class="img-fluid" [src]="family.imgUrl">
+        </a>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Elemento de audio -->
+  <audio #audioPlayer></audio>
+
