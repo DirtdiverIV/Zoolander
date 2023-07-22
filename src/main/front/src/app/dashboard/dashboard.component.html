@@ -1,15 +1,14 @@
 <div class="btnDiv container">
-    <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown link
-        </a>
-      
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Continentes
+    </a>
+    <ul class="dropdown-menu">
+      <li *ngFor="let continent of continentsData">
+        <a class="dropdown-item" href="#">{{ continent.name }} <img [src]="'../assets' + continent.imgUrl" alt="Imagen del continente" width="100" height="100"></a>
+      </li>
+    </ul>
+  </div>
       <div>
       <button type="button" class="btn btn-primary">Ejemplares: <button id="counter" type="button" class="btn btn-primary">{{ animalCount }}</button></button>
     </div>

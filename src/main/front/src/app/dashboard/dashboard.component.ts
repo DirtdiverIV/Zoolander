@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Axios from 'axios'; // Importa 'Axios' en lugar de 'axios'
+import { ContinentService } from '../continents.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,12 +12,14 @@ export class DashboardComponent implements OnInit {
   animalCount: number = 0;
   families: any[] = [];
   familiesData: any[] = [];
+  continentsData: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private continentService: ContinentService) {}
 
   ngOnInit(): void {
     this.showAnimalCount();
     this.getFamiliesData();
+    this.getContinentsData();
   }
 
   async showAnimalCount() {
@@ -37,5 +40,15 @@ export class DashboardComponent implements OnInit {
           imgUrl: `../assets${family.imgUrl}`
         }));
       });
+  }
+  getContinentsData(): void {
+    this.continentService.getAllContinents().subscribe(
+      (continents: any[]) => {
+        this.continentsData = continents; // Almacenamos los datos de los continentes en la variable continentsData
+      },
+      (error) => {
+        console.error('Error fetching continents data:', error);
+      }
+    );
   }
 }

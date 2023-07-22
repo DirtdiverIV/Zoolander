@@ -15,6 +15,7 @@ import { FamilySelectorComponent } from './family-selection/family-selection.com
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
+import { ContinentsComponent } from './continents/continents.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -31,7 +32,8 @@ const routes: Routes = [
     EditformComponent,
     DashboardComponent,
     FamilySelectorComponent,
-    TestComponent // Actualicé el nombre del componente
+    TestComponent,
+    ContinentsComponent // Actualicé el nombre del componente
   ],
   imports: [
     BrowserModule,
