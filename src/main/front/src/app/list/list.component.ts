@@ -56,7 +56,6 @@ export class ListComponent implements OnInit {
         },
         (error) => {
           console.error('Error deleting animal', error);
-          // Aquí puedes mostrar un mensaje de error si la eliminación no fue exitosa.
         }
       );
     }

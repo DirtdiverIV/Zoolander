@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Axios from 'axios';
-import { ContinentsService } from '../continents.service'; // Cambiar ContinentService a ContinentsService
+import { ContinentsService } from '../continents.service'; 
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private continentsService: ContinentsService, // Cambiar ContinentService a ContinentsService
+    private continentsService: ContinentsService, 
     private router: Router
   ) {}
 
