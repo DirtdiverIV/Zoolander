@@ -1,6 +1,12 @@
 img {
     width: 80px;
+    border-radius: 5px;
   }
+
+th {
+    background-color: #477D47;
+    color: white;
+}
   
   #burguer {
     background-color: #477D47;
@@ -18,14 +24,30 @@ img {
   .liDiv {
     display: flex;
   }
-  
-  /* Elimina #tableDiv y coloca los estilos directamente en el tbody */
-  table#zebra tbody tr:nth-child(even) {
-    background-color: #f2f2f2; /* Color de fondo para filas pares */
+
+  table#zebra tr:nth-child(even) td {
+    background-color: white; 
+  }
+    
+  table#zebra tr:nth-child(odd) td {
+    background-color: #fde6b3; 
   }
   
-  table#zebra tbody tr:nth-child(odd) {
-    background-color: #ca1313; /* Color de fondo para filas impares */
+  table#zebra {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  table#zebra th:first-child,
+  table#zebra td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  table#zebra th:last-child,
+  table#zebra td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
   
   #tittleDiv {

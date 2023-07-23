@@ -5,7 +5,7 @@
 
 
 <div class="container" id="tableDiv">
-<table class="table" id="zebra">
+<table class="table zebra" id="zebra">
   <thead>
     <tr>
       <th>ID</th>
@@ -20,8 +20,8 @@
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let item of filteredData">
-      <tr *ngIf="item.family && item.family.id === selectedFamilyId">
+    <ng-container *ngFor="let item of filteredData; let i = index">
+      <tr [ngClass]="{ 'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0 }" *ngIf="item.family && item.family.id === selectedFamilyId">
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.type }}</td>
