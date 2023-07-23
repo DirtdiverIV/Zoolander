@@ -1,4 +1,42 @@
 img {
     width: 80px;
-}
-
+  }
+  
+  #burguer {
+    background-color: #477D47;
+    border-color: #477D47;
+  }
+  
+  #edit {
+    color: white;
+  }
+  
+  ul {
+    background-color: #F19628;
+  }
+  
+  .liDiv {
+    display: flex;
+  }
+  
+  /* Elimina #tableDiv y coloca los estilos directamente en el tbody */
+  table#zebra tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo para filas pares */
+  }
+  
+  table#zebra tbody tr:nth-child(odd) {
+    background-color: #ca1313; /* Color de fondo para filas impares */
+  }
+  
+  #tittleDiv {
+    padding: 4em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #tittleBtn {
+    width: 60%;
+    font-size: 28px;
+    background-color: #477D47;
+    border-color: #477D47;
+  }
