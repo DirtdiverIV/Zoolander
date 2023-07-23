@@ -34,4 +34,8 @@ export class AnimalsService {
   updateAnimal(id: number, data: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/animals/${id}`, data);
   }
+  deleteAnimal(animalId: number): Observable<any> {
+    const url = `${this.apiUrl}/animals/${animalId}`;
+    return this.http.delete(url);
+  }
 }

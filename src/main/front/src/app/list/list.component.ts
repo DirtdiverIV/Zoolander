@@ -46,4 +46,19 @@ export class ListComponent implements OnInit {
       });
     }
   }
+
+  onDeleteAnimal(animalId: number) {
+    if (confirm('¿Estás seguro de que deseas eliminar este animal?')) {
+      this.animalsService.deleteAnimal(animalId).subscribe(
+        () => {
+          console.log('Animal deleted successfully');
+          this.loadAnimals();
+        },
+        (error) => {
+          console.error('Error deleting animal', error);
+          // Aquí puedes mostrar un mensaje de error si la eliminación no fue exitosa.
+        }
+      );
+    }
+  }
 }
