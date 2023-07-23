@@ -27,4 +27,11 @@ export class AnimalsService {
       tap(data => console.log('Animals data for family:', data))
     );
   }
+  getAnimalById(animalId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/animals/${animalId}`);
+  }
+
+  updateAnimal(id: number, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/animals/${id}`, data);
+  }
 }

@@ -1,1 +1,43 @@
-<p>editform works!</p>
+<div class="container" id="tittleDiv">
+  <button id="tittleBtn" class="btn btn-primary" type="button">Editar ejemplar</button>
+</div>
+
+<div class="container" id="mainEdit">
+  <div class="container" id="imgUrlDiv">
+    <img [src]="'../assets' + animalData.imgUrl">
+  </div>
+  <div class="container" id="formDiv">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Nombre</span>
+      <input type="text" class="form-control" [(ngModel)]="animalData.name" aria-label="Nombre" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Tipo</span>
+      <input type="text" class="form-control" [(ngModel)]="animalData.type" aria-label="Tipo" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Familia</span>
+      <input type="text" class="form-control" [(ngModel)]="animalData.family.name" aria-label="Familia" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Género</span>
+      <input type="text" class="form-control" [(ngModel)]="animalData.gender" aria-label="Género" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Origen</span>
+      <input type="text" class="form-control" [(ngModel)]="animalData.continent.name" aria-label="Origen" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Ingreso</span>
+      <input type="text" class="form-control" [(ngModel)]="animalData.date" aria-label="Ingreso" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Imagen Url</span>
+      <input type="text" class="form-control" [(ngModel)]="animalData.imgUrl" aria-label="Imagen Url" aria-describedby="basic-addon1">
+    </div>
+    <div class="container" id="btnDiv">
+      <button id="apply" type="button" class="btn btn-success" (click)="onApplyChanges()">Aplicar</button>
+      <button id="cancel" type="button" class="btn btn-success" (click)="onCancel()">Cancelar</button>
+    </div>
+  </div>
+</div>

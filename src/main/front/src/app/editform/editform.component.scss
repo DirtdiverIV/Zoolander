@@ -1,0 +1,47 @@
+#tittleDiv {
+    padding: 4em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #tittleBtn {
+    width: 60%;
+    font-size: 28px;
+    background-color: #477D47;
+    border-color: #477D47;
+  }
+
+#mainEdit {
+  display: flex;
+  background-color: #FFD477 ;
+  padding: 4em;
+  border-radius: 10px;
+}
+
+img {
+  border-radius: 10px;
+  border: 3px solid #477D47;
+}
+
+#basic-addon1 {
+  background-color: #F19628;
+  border: 3px solid #477D47;
+  color: white;
+  border-right: 0px;
+}
+
+.form-control {
+  border-color: #477D47;
+  border: 4px solid #477D47;
+}
+
+#btnDiv {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2em;
+}
+
+#cancel {
+  background-color: #F19628;
+  border-color: #F19628;
+}
