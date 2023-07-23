@@ -10,12 +10,12 @@ import { CreateformComponent } from './createform/createform.component';
 import { EditformComponent } from './editform/editform.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
-import { AnimalsService } from './animals.service';
+import { AnimalsService } from './services/animals.service';
 
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ContinentsComponent } from './continents/continents.component';
-import { ContinentsService } from './continents.service';
+import { ContinentsService } from './services/continents.service';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },

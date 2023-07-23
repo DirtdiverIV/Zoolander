@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AnimalsService } from '../animals.service';
-import { FamilyService } from '../family.service';
+import { AnimalsService } from '../services/animals.service';
+import { FamilyService } from '../services/family.service';
 import { DatePipe } from '@angular/common';
 import { map } from 'rxjs/operators';
 

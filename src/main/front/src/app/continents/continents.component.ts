@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimalsService } from '../animals.service';
-import { ContinentsService } from '../continents.service';
+import { AnimalsService } from '../services/animals.service';
+import { ContinentsService } from '../services/continents.service';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { map } from 'rxjs/operators';

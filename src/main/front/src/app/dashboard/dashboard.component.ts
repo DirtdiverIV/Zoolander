@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Axios from 'axios';
-import { ContinentsService } from '../continents.service'; 
+import { ContinentsService } from '../services/continents.service'; 
 import { Router } from '@angular/router';
 
 @Component({

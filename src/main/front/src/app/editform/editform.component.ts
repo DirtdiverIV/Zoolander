@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AnimalsService } from '../animals.service';
+import { AnimalsService } from '../services/animals.service';
 
 interface AnimalData {
   id: number;
