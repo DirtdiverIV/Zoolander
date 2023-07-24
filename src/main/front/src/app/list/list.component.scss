@@ -1,0 +1,101 @@
+img {
+    width: 80px;
+    border-radius: 5px;
+  }
+
+th {
+    background-color: #477D47;
+    color: white;
+}
+  
+  #burguer {
+    background-color: #477D47;
+    border-color: #477D47;
+  }
+  
+  #edit {
+    color: white;
+  }
+  
+  ul {
+    background-color: #F19628;
+  }
+  
+  .liDiv {
+    display: flex;
+  }
+
+  table#zebra tr:nth-child(even) td {
+    background-color: white; 
+  }
+    
+  table#zebra tr:nth-child(odd) td {
+    background-color: #fde6b3; 
+  }
+  
+  table#zebra {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  table#zebra th:first-child,
+  table#zebra td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  table#zebra th:last-child,
+  table#zebra td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  #tittleDiv {
+    padding: 4em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #tittleBtn {
+    width: 60%;
+    font-size: 28px;
+    background-color: #477D47;
+    border-color: #477D47;
+  }
+
+  @media (max-width: 576px) {
+    table#zebra {
+      font-size: 14px;
+    }
+
+   
+  img {
+    width: 40px;
+
+  }
+
+  #svgimg {
+    width: 20px;
+    height: 20px;
+  }
+   
+
+
+    table#zebra th:nth-child(1),
+    table#zebra td:nth-child(1),
+    table#zebra th:nth-child(2),
+    table#zebra td:nth-child(2),
+    table#zebra th:nth-child(3),
+    table#zebra td:nth-child(3),
+    table#zebra th:nth-child(5), /* Oculta la columna "Familia" */
+    table#zebra td:nth-child(5),
+    table#zebra th:nth-child(6), /* Oculta la columna "Origen" */
+    table#zebra td:nth-child(6),
+    table#zebra th:nth-child(7), /* Oculta la columna "Ingreso" */
+    table#zebra td:nth-child(7) {
+      display: none;
+    }
+  
+  }
+
+  

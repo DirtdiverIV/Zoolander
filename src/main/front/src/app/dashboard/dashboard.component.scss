@@ -1,0 +1,63 @@
+.btnDiv {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 4em;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+    margin-top: 8em;
+
+}
+
+.dash2 {
+   
+}
+
+#drop {
+    width: 4em;
+    height: 4em;
+    border: 2px solid #FFD477;
+    border-radius: 5px;
+}
+
+ul {
+    background-color: #F19628
+}
+
+#lip {
+    color: white;
+}
+
+#contbtn {
+    background-color: #477D47;
+    font-size: 28px;
+    font-weight: bold;
+    border-color: #477D47;
+    
+}
+
+#counter { 
+    background-color: #FFD477;
+    font-size: 18px;
+    color: #477D47;
+    border-color: #FFD477;
+}
+
+
+.img-fluid {
+    width: 512px;
+    border-radius: 10px;
+    border: 4px solid #F19628;
+    
+    object-fit: cover; /* Puedes usar "contain" o "cover" según tus necesidades */
+  }
+
+#maingrid {
+    width: 80%;
+}
+
+
+
+

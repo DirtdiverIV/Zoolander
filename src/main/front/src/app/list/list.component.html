@@ -1,0 +1,56 @@
+<div class="container" id="tittleDiv">
+  <button id="tittleBtn" class="btn btn-primary" type="button">Listado de ejemplares</button>
+
+</div>
+
+
+<div class="container" id="tableDiv">
+<table class="table-responsive table zebra" id="zebra">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Género</th>
+      <th>Familia</th>
+      <th>Origen</th>
+      <th>Ingreso</th>
+      <th>Imagen</th>
+      <th>Herramientas</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of filteredData; let i = index">
+      <tr [ngClass]="{ 'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0 }" *ngIf="item.family && item.family.id === selectedFamilyId">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.gender }}</td>
+        <td>{{ item.family.name }}</td>
+        <td>{{ item.continent.name }}</td>
+        <td>{{ item.date | date: 'dd/MM/yyyy' }}</td>
+        <td><img [src]="'../assets' + item.imgUrl"></td>
+        <td>
+          <div class="dropdown">
+            <button id="burguer" class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg id="svgimg" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+            <ul class="dropdown-menu">
+              <div class="liDiv">
+              <li><button id="edit" type="button" class="btn btn-warning" [routerLink]="['/edit', item.id]">
+                Editar
+              </button></li>
+              <li><button id="delete" type="button" class="btn btn-danger" (click)="onDeleteAnimal(item.id)">
+                Eliminar
+              </button></li>
+            </div>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+</div>
