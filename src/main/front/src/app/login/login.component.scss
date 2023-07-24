@@ -1,0 +1,37 @@
+#mainLogin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFD477;
+    width: 800px;
+    height: 800px;
+    margin-top: 20em;
+    border-radius: 10px;
+
+}
+
+img {
+    margin-bottom: 10em;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url('../../assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 2000px;
+    width: 3000px;
+  }
+
+

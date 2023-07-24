@@ -1,0 +1,20 @@
+<div id="main" class="container main-container">
+
+<div class="container" id="mainLogin">
+    <img src="../assets/logo.png">
+  
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Usuario</span>
+      <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Password</span>
+      <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" aria-label="Password" aria-describedby="basic-addon1">
+    </div>
+  
+    <button id="login" type="button" class="btn btn-success" (click)="onLogin()">Acceder</button>
+  
+    <button id="alert" type="button" class="btn btn-danger" *ngIf="showInvalidDataAlert">Datos incorrectos</button>
+  </div>
+
+</div>

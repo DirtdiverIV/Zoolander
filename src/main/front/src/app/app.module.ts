@@ -16,6 +16,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ContinentsComponent } from './continents/continents.component';
 import { ContinentsService } from './services/continents.service';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
     CreateformComponent,
     EditformComponent,
     DashboardComponent,
-   ContinentsComponent 
+   ContinentsComponent,
+   LoginComponent 
   ],
   imports: [
     BrowserModule,
